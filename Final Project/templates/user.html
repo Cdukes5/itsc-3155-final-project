@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="grayDiv">
+    <div class="whiteDiv">
+        <h1 class="profileHeader">Account Profile</h1>
+
+        <form class="profileForm" method="POST" action="{{ url_for('profile') }}">
+            <h2>Update Email</h2>
+                <div>
+                    <label class="profileLabel" for="email">Email:</label>
+                    <input type="email" id="email" name="email" value="{{ current_user.email }}">
+                </div>
+                <div>
+                    <input class="profileButton" type="submit" name="update_email" value="Update Email">
+                </div>
+        </form>
+
+        <form class="profileForm" method="POST" action="{{ url_for('profile') }}">
+            <h2 class="form2Header">Update Password</h2>
+                <div>
+                    <label class="profileLabel" for="current_password">Current Password:</label>
+                    <input type="password" id="current_password" name="current_password">
+                </div>
+                <div>
+                    <label class="profileLabel" for="new_password">New Password:</label>
+                    <input type="password" id="new_password" name="new_password">
+                </div>
+                <div>
+                    <label class="profileLabel" for="confirm_password">Confirm Password:</label>
+                    <input type="password" id="confirm_password" name="confirm_password">
+                </div>
+                <div>
+                    <input class="profileButton" type="submit" name="update_password" value="Update Password">
+                </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

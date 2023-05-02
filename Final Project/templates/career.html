@@ -7,7 +7,36 @@
 {% block body %}
 <div class="grayDiv">
     <div class="whiteDiv">
-        
+        <div class="grid-container">
+            <div class="grid-item">
+              <img src="{{ url_for('static', filename='images/armystock.png') }}" alt="Image 1">
+              <p>Army</p>
+            </div>
+            <div class="grid-item">
+              <img src="{{ url_for('static', filename='images/educationstock.png') }}" alt="Image 2">
+              <p>Education</p>
+            </div>
+            <div class="grid-item">
+              <img src="{{ url_for('static', filename='images/bankstock.png') }}" alt="Image 3">
+              <p>Finances</p>
+            </div>
+            <div class="grid-item">
+              <img src="{{ url_for('static', filename='images/lawstock.png') }}" alt="Image 4">
+              <p>Law</p>
+            </div>
+            <div class="grid-item">
+              <img src="{{ url_for('static', filename='images/sciencestock.png') }}" alt="Image 5">
+              <p>Science</p>
+            </div>
+            <div class="grid-item">
+              <img src="{{ url_for('static', filename='images/techstock.png') }}" alt="Image 6">
+              <p>Technology</p>
+            </div>
+        </div>
+        <div class="career-view">
+            <p>View all jobs and careers forums</p>
+            <button class="career-rounded-button"><a>View</a></button>
+        </div>
     </div>
 </div>
 {% endblock %}

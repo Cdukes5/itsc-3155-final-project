@@ -28,9 +28,15 @@
 
         <nav class="signUp">
             <ul>
-                <li><a href="{{ url_for('login') }}">Login</a></li>
-                <li><a>|</a></li>
-                <li><a href="{{ url_for('signup') }}">Sign up</a></li>
+                {% if current_user.is_authenticated %}
+                    <li class="profileNav"><a href="{{ url_for('profile') }}">Welcome, {{ current_user.username }}!</a></li>
+                    <li class="profileNav">|</li>
+                    <li class="profileNav"><a href="{{ url_for('logout') }}">Logout</a></li>
+                {% else %}
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a>|</a></li>
+                    <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+                {% endif %}
             </ul>
         </nav>
     </header>

@@ -17,7 +17,10 @@
                 <div class="bottom">Excel.</div>
             </div>
             <div class="button-container-south">
-                <button class="rounded-button"><a href="{{ url_for('signup') }}">Get Started</a></button>
+                {% if current_user.is_authenticated %}
+                {% else %}
+                    <button class="rounded-button"><a href="{{ url_for('signup') }}">Get Started</a></button>
+                {% endif %}
             </div>
         </div>
     </div>

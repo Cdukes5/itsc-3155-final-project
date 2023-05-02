@@ -194,6 +194,16 @@ header
       }
 }
 
+.profileNav
+{
+    margin-right:6%;
+}
+
+#noUnderline:hover
+{
+    text-decoration: none;
+}
+
 /* Footer CSS begins */
 
 footer
@@ -645,6 +655,12 @@ footer
     font-size:16px;
 }
 
+.alert-danger
+{
+    text-align: center;
+    margin-bottom:4%;
+}
+
 /* End login page CSS */
 
 /* Begin sign up page CSS */
@@ -837,3 +853,130 @@ footer
 }
 
 /* End contact page CSS */
+
+/* Start career page CSS */
+
+.grid-container 
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    height: 75%;
+    width:100%;
+    overflow: auto;
+}
+  
+.grid-item 
+{
+    position: relative;
+}
+  
+.grid-item img 
+{
+    width: 95%;
+    height: 95%;
+}
+  
+.grid-item p 
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    margin: 0;
+    color: #fff;
+    font-size: 16px;
+}
+
+.career-view
+{
+    background-color: #3D95E7;
+    display: flex;
+    align-items: center;
+}
+
+.career-view p
+{
+    color:white;
+    flex: 1;
+    font-family: 'Inter', sans-serif;
+    font-style:  normal;
+    font-weight: 700;
+    font-display: swap;
+    font-size: 16px;
+    margin-left:4%;
+}
+
+.career-rounded-button 
+{
+    border-radius: 50px; 
+    padding: 10px 20px; 
+    background-color: #D78940;
+    color: white; 
+    border: none; 
+    width:70px;
+    height:30px;
+    font-family: 'Inter', sans-serif;
+    font-style:  normal;
+    font-weight: 700;
+    font-display: swap;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 4%;
+}
+
+/* End career page CSS */
+
+/* Start profile page CSS */
+
+.profileHeader
+{
+    text-align: center;
+}
+
+.profileForm
+{
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.profileLabel
+{
+    display: block;
+    margin-bottom: 5px;
+}
+
+.profileForm input[type="email"], input[type="password"]
+{
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.profileButton
+{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #D78940;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form2Header
+{
+    margin-top:10%;
+}
