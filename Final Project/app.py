@@ -8,6 +8,7 @@ from wtforms import StringField, TextAreaField, FileField
 from wtforms.validators import DataRequired
 import secrets
 from datetime import datetime
+import os
 
 app = Flask(__name__)
 
@@ -91,7 +92,6 @@ class PostForm(FlaskForm):
 
 @app.route('/')
 def home():
-        print(current_user.is_authenticated)
         return render_template('home.html', current_user=current_user)
 
 @app.route('/about')
@@ -268,3 +268,10 @@ def edit_post(post_id):
         db.session.commit()
         return redirect(url_for('thread', thread_id=post.thread_id))
     return render_template('edit_post.html', form=form, post=post)
+
+
+@app.route('/forum/<int:forum_id>/get_threads')
+def get_threads(forum_id):
+    threads = Thread.query.filter_by(forum_id=forum_id).all()
+    print('updated')
+    return render_template('thread_list.html', threads=threads)

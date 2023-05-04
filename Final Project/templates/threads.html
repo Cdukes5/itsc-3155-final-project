@@ -7,11 +7,28 @@
             <h1>{{ forum.name }}</h1>
             <a class="newThread" href="{{ url_for('new_thread', forum_id=forum.id) }}">Create Thread</a>
         </div>
-        <ul class="forum-list">
-        {% for thread in threads[::-1] %}
-           <li><a href="{{ url_for('thread', thread_id=thread.id) }}">{{ thread.title }} <p class="showUser">by {{ thread.username }} at {{ thread.created_at }}</p></a></li>
-        {% endfor %}
+        <ul class="forum-list" id="thread-list">
+            {% include 'thread_list.html' %}
         </ul>
     </div>
 </div>
+
+{% block scripts %}
+{{ super() }}
+<script>
+$(document).ready(function() {
+  function updateThreadList() {
+    $.get('{{ url_for("get_threads", forum_id=forum.id) }}', function(data) {
+      $('#thread-list').html(data);
+    });
+  }
+
+  // Update the thread list initially
+  updateThreadList();
+
+  // Update the thread list every 10 seconds
+  setInterval(updateThreadList, 10000);
+});
+</script>
+{% endblock %}
 {% endblock %}
