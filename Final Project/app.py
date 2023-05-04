@@ -253,7 +253,6 @@ def edit_thread(thread_id):
     if form.validate_on_submit():
         form.populate_obj(thread)
         db.session.commit()
-        flash('Your thread has been updated.', 'success')
         return redirect(url_for('thread', thread_id=thread.id))
     return render_template('edit_thread.html', form=form, thread=thread)
 
@@ -267,6 +266,5 @@ def edit_post(post_id):
     if form.validate_on_submit():
         form.populate_obj(post)
         db.session.commit()
-        flash('Your thread has been updated.', 'success')
         return redirect(url_for('thread', thread_id=post.thread_id))
     return render_template('edit_post.html', form=form, post=post)
