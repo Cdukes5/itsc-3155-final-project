@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="grayDiv">
+    <div class="whiteDiv">
+        <h1 class="makeThreadHeader">Edit Post</h1>
+        <form class="makeThread" method="POST">
+            {{ form.hidden_tag() }}
+            <label for="content">Content:</label>
+            <textarea id="content" name="content" cols="86" rows="10" required>{{ post.content }}</textarea><br>
+            <input type="submit" value="Save Changes">
+        </form>
+    </div>
+</div>
+
+{% endblock %}

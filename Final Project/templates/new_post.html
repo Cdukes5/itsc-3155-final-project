@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="grayDiv">
+  <div class="whiteDiv">
+    <h1 class="makeThreadHeader">New Post in {{ thread.title }}</h1>
+    <form class="makeThread" method="POST">
+      <label for="content">Content:</label>
+      <textarea id="content" name="content" cols="86" rows="10" required></textarea><br>
+      <input type="submit" value="Create Post">
+    </form>
+  </div>
+</div>
+{% endblock %}

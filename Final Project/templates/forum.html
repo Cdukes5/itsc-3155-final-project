@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="grayDiv">
+    <div class="whiteDiv">
+<h1>Forums</h1>
+
+<ul class="forum-list">
+{% for forum in forums %}
+  <li><a href="{{ url_for('forum', forum_id=forum.id) }}">{{ forum.name }}</a></li>
+{% endfor %}
+</ul>
+</div>
+</div>
+{% endblock %}

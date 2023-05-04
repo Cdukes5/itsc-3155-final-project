@@ -929,6 +929,13 @@ footer
     justify-content: center;
     align-items: center;
     margin-right: 4%;
+    text-decoration: none;
+}
+
+.career-rounded-button a
+{
+    text-decoration: none;
+    color:white;
 }
 
 /* End career page CSS */
@@ -954,7 +961,7 @@ footer
     margin-bottom: 5px;
 }
 
-.profileForm input[type="email"], input[type="password"]
+.profileForm input[type="email"], .profileForm input[type="password"]
 {
     padding: 10px;
     margin-bottom: 10px;
@@ -979,4 +986,215 @@ footer
 .form2Header
 {
     margin-top:10%;
+}
+
+.flashes {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* End user page CSS */ 
+
+/* Start forums CSS */
+
+.forum-section
+{
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.forum-list li a
+{
+    display: flex;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.forum-list li a:hover
+{
+    background-color: #eaeaea;
+}
+
+.forum-list
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.headerContainer
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.newThread
+{
+    display: inline-block;
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: orange;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.newThread:hover 
+{
+    background-color: #ff8800;
+}
+
+.makeThreadHeader 
+{
+    margin-top: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.makeThread 
+{
+    margin: 20px auto;
+    max-width: 500px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.makeThread label 
+{
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.makeThread input[type="text"],
+.makeThread textarea 
+{
+    width: 96%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: none;
+}
+
+.makeThread input[type="submit"] 
+{
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.makeThread input[type="submit"]:hover 
+{
+    background-color: #ff8800;
+}
+
+.thread-list
+{
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
+}
+
+.thread-list:hover
+{
+    background-color: #eaeaea;
+}
+
+.showUser
+{
+    display:inline-flex;
+}
+
+.forum-box
+{
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    height:100%;
+}
+
+.forum-reply-box
+{
+    position:relative;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+}
+
+.forum-reply-box h2 
+{
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.replyFirst
+{
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.replySecond
+{
+    font-size: 14px;
+    color: #666;
+    margin-top: 0;
+    align-self: flex-end;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right:1%;
+    margin-bottom:1%;
+}
+
+.editButton 
+{
+    margin-top:3%;
+    text-decoration: none;
+    width:4%;
+    color:black;
+}
+
+.editButton:hover
+{
+    text-decoration: underline;
 }

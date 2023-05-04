@@ -4,6 +4,15 @@
 <div class="grayDiv">
     <div class="whiteDiv">
         <h1 class="profileHeader">Account Profile</h1>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
 
         <form class="profileForm" method="POST" action="{{ url_for('profile') }}">
             <h2>Update Email</h2>

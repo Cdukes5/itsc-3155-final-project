@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="grayDiv">
+  <div class="whiteDiv">
+    <div class="headerContainer">
+      <h1>{{ thread.title }}</h1>
+      <a class="newThread" href="{{ url_for('new_post', thread_id=thread.id) }}">New Post</a>
+    </div>
+    <div class="forum-reply-box">
+      <h2>{{ thread.content }}</h2>
+      <p class="replySecond">by {{ thread.username }} at {{ thread.created_at }}</p>
+      {% if current_user.username == thread.username %}
+        <a class="editButton" href="{{ url_for('edit_thread', thread_id=thread.id) }}">Edit</a>
+      {% endif %}
+    </div>
+    
+    {% for post in posts %}
+    <div class="forum-reply-box">
+      <p class="replyFirst">{{ post.content }}</p>
+      <p class="replySecond">by {{ post.username }} at {{ post.date_created }}</p>
+      {% if current_user.username == post.username %}
+        <a class="editButton" href="{{ url_for('edit_post', post_id=post.id) }}">Edit</a>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
