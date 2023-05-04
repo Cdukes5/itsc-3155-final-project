@@ -8,6 +8,7 @@ from wtforms import StringField, TextAreaField, FileField
 from wtforms.validators import DataRequired
 import secrets
 from datetime import datetime
+import pytz
 import os
 
 app = Flask(__name__)
@@ -54,10 +55,12 @@ class Forum(db.Model):
 
 
 # Define the Post model    
+eastern = pytz.timezone('US/Eastern')
+
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.String(500), nullable=False)
-    date_created = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    date_created = db.Column(db.DateTime, nullable=False, default=datetime.now(tz=eastern))
     username = db.Column(db.String(50), db.ForeignKey('user.username'), nullable=False)
     thread_id = db.Column(db.Integer, db.ForeignKey('thread.id'), nullable=False)
 
@@ -66,7 +69,7 @@ class Thread(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(255), nullable=False)
     content = db.Column(db.Text, nullable=False)
-    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    created_at = db.Column(db.DateTime, default=datetime.now(tz=eastern))
     forum_id = db.Column(db.Integer, db.ForeignKey('forum.id'), nullable=False)
     username = db.Column(db.String(50), db.ForeignKey('user.username'), nullable=False)
     forum = db.relationship('Forum', backref=db.backref('threads', lazy=True))
@@ -193,7 +196,6 @@ def career():
 
 #Display forums in the database
 @app.route('/forum')
-@login_required
 def forums():
     forums = Forum.query.all()
     return render_template('forum.html', forums=forums)

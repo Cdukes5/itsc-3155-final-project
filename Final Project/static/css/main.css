@@ -1198,3 +1198,9 @@ footer
 {
     text-decoration: underline;
 }
+
+.goBack
+{
+    text-decoration: none;
+    color:black;
+}

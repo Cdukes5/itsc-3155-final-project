@@ -28,6 +28,21 @@ CREATE TABLE forum (
   name VARCHAR(50) NOT NULL
 );
 
+INSERT INTO forum (name) VALUES ('General Chat');
+INSERT INTO forum (name) VALUES ('Animals and Pets');
+INSERT INTO forum (name) VALUES ('Everyday Advice');
+INSERT INTO forum (name) VALUES ('Relationships');
+INSERT INTO forum (name) VALUES ('Fitness and Health');
+INSERT INTO forum (name) VALUES ('Fashion');
+INSERT INTO forum (name) VALUES ('Travel');
+INSERT INTO forum (name) VALUES ('Study Help');
+INSERT INTO forum (name) VALUES ('Job Application Advice');
+INSERT INTO forum (name) VALUES ('Armed Forces');
+INSERT INTO forum (name) VALUES ('Education Jobs');
+INSERT INTO forum (name) VALUES ('Finance Jobs');
+INSERT INTO forum (name) VALUES ('Law Career Work');
+INSERT INTO forum (name) VALUES ('Science and Tech Jobs');
+
 CREATE TABLE Thread (
   id INT(11) NOT NULL AUTO_INCREMENT,
   title VARCHAR(255) NOT NULL,

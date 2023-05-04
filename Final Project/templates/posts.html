@@ -4,8 +4,11 @@
 <div class="grayDiv">
   <div class="whiteDiv">
     <div class="headerContainer">
-      <h1>{{ thread.title }}</h1>
+      <h1><a class="goBack" href="{{ url_for('forum', forum_id=thread.forum_id) }}">{{ thread.title }}</a></h1>
+      {% if current_user.is_authenticated %}
       <a class="newThread" href="{{ url_for('new_post', thread_id=thread.id) }}">New Post</a>
+      {% else %}
+      {% endif %}
     </div>
     <div class="forum-reply-box">
       <h2>{{ thread.content }}</h2>
